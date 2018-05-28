@@ -38,7 +38,7 @@ public class Team {
 	private int noResult;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "team", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	private List<Player> players = new ArrayList<>();
 	
 	public Team() { }

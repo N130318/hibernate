@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import softead.hibernate.models.Player;
 import softead.hibernate.models.Team;
 import softead.hibernate.service.PlayerService;
+import softead.hibernate.service.TeamService;
 
 @RestController
 @RequestMapping("/players")
@@ -19,6 +20,8 @@ public class PlayerController {
 
 	@Autowired
 	PlayerService playerService;
+	@Autowired
+	TeamService teamService;
 	
 	// Get All Playres
 	@RequestMapping("")
@@ -45,8 +48,9 @@ public class PlayerController {
 	}
 	
 	//Get Player By Team
-		@RequestMapping(value ="/team", method=RequestMethod.GET)
-		public List<Player> deletePlayer(@RequestBody() Team team) {
+		@RequestMapping(value ="/team/{id}", method=RequestMethod.GET)
+		public List<Player> getPlayerByTeam(@PathVariable() int id) {
+			Team team = teamService.getTeam(id);
 			System.out.println("Plyer by Teams : " + team);
 			return playerService.getPlayersByTeam(team);
 		}

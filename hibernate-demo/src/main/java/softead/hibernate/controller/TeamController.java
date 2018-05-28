@@ -31,14 +31,17 @@ public class TeamController {
 	
 	//GET, Single Player
 	@RequestMapping("/{id}")
+	@Transactional
 	public Team getTeam(@PathVariable("id") int id) {
 		System.out.println(teamService.getTeam(id).getDescription());
 		return teamService.getTeam(id);
 	}
 	
-	// POST, Save User
+	// POST, Save Team
 	@RequestMapping(value="/add", method = RequestMethod.POST)
+	@Transactional
 	public void saveTeam(@RequestBody Team team) {
+		System.out.println("Saving team ::::::: " + team.getTeam());
 		teamService.saveTeam(team);
 	}
 	
