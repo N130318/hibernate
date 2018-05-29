@@ -41,7 +41,6 @@ public class TeamController {
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	@Transactional
 	public void saveTeam(@RequestBody Team team) {
-		System.out.println("Saving team ::::::: " + team.getTeam());
 		teamService.saveTeam(team);
 	}
 	

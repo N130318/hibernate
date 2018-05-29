@@ -1,4 +1,4 @@
-/*insert into team (id, team, description, owner, total_played, total_won, total_lost, no_result)
+insert into team (id, team, description, owner, total_played, total_won, total_lost, no_result)
 values (1,'RCB','Royal Challengers Bengaluru', 'United Spirits', 140, 98, 40, 2);
 insert into team (id, team, description, owner, total_played, total_won, total_lost, no_result)
 values (2,'CSK','Chennai Super Kings', 'Chennai Super Kings Cricket Ltd', 140, 120, 28, 2);
@@ -68,5 +68,5 @@ insert into player (id, player_name, preference, match_played, runs, wickets, hi
 values (23, 'Ishwar P', 'BAT',163, 4948, 4, 113, '2/25', 34, 4, 40, 69, 0, 434, 178, 130.75, 38.35);
 insert into player (id, player_name, preference, match_played, runs, wickets, highest_score, 
 					best_wicket, fifties, centuries, thirties, catches, stumpings, fours, sixes, strike_rate, average)
-values (24, 'Sumit A', 'BAT',163, 4948, 4, 113, '2/25', 34, 4, 40, 69, 0, 434, 178, 130.75, 38.35);*/
+values (24, 'Sumit A', 'BAT',163, 4948, 4, 113, '2/25', 34, 4, 40, 69, 0, 434, 178, 130.75, 38.35);
 

@@ -39,16 +39,25 @@ public class TeamService {
 	}
 	
 	public void removeTeam(int id) {
+		Team team = getTeam(id);
+		if(team!=null && team.getPlayers()!=null) {
+			for(Player player: team.getPlayers()) {
+				player.setTeam(null);
+				playerDao.save(player);
+			}
+		}
+		team.setPlayers(new ArrayList<>());
+		saveTeam(team);
+		System.out.println("Backend Delete : " + team.toString());
 		teamDao.deleteById(id);
 	}
 	
 	public void saveTeam(Team team) {
-		/*for(Player player : team.getPlayers()) {
-			System.out.print("Player is : " + player.getPlayerName());
+		teamDao.save(team);
+		for(Player player : team.getPlayers()) {
 			player.setTeam(team);
 			playerDao.save(player);
-		}*/
-		teamDao.save(team);
+		}
 	}
 
 	public List<Player> getTeamPlayers(int id) {

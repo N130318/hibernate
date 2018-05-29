@@ -114,4 +114,11 @@ public class Team {
 	public void setNoResult(int noResult) {
 		this.noResult = noResult;
 	}
+
+	@Override
+	public String toString() {
+		return "Team [id=" + id + ", team=" + team + ", description=" + description + ", owner=" + owner
+				+ ", totalPlayed=" + totalPlayed + ", totalWon=" + totalWon + ", totalLost=" + totalLost + ", noResult="
+				+ noResult + ", players=" + players + "]";
+	}
 }

@@ -36,7 +36,7 @@ public class PlayerController {
 	}
 	
 	// POST, Save User
-	@RequestMapping(value="/add", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public void savePlayer(@RequestBody Player player) {
 		playerService.savePlayer(player);
 	}
