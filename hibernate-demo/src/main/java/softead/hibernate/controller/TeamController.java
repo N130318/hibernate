@@ -29,7 +29,7 @@ public class TeamController {
 		return teamService.getTeams();
 	}
 	
-	//GET, Single Player
+	//GET, Single Player added
 	@RequestMapping("/{id}")
 	@Transactional
 	public Team getTeam(@PathVariable("id") int id) {
